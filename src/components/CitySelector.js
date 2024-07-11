@@ -247,14 +247,16 @@ const CitySelector = ({ onCityChange }) => {
   };
 
   return (
-    <select value={city} onChange={handleChange}>
-      <option value="">Select a city</option>
-      {cities.map((city) => (
-        <option key={city} value={city}>
-          {city}
-        </option>
-      ))}
-    </select>
+    <div style={{ margin: "5vh" }}>
+      <select value={city} onChange={handleChange}>
+        <option value="">Select a city</option>
+        {cities.map((city) => (
+          <option key={city} value={city}>
+            {city}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 };
 
