@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import axios from "axios";
+import CitySelector from "./components/CitySelector";
+import WeatherDisplay from "./components/WeatherDisplay";
+import WeatherBackground from "./components/WeatherBackground";
 
-function App() {
+const App = () => {
+  const [weatherData, setWeatherData] = useState(null);
+
+  const fetchWeatherData = async (city) => {
+    try {
+      const response = await axios.get(
+        `https://api.weatherapi.com/v1/current.json?key=e2c17cf7def74706bbd62406241107&q=${city}&aqi=no`
+      );
+      setWeatherData(response.data);
+    } catch (error) {
+      console.error("Error fetching the weather data", error);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <WeatherBackground weather={weatherData?.current.condition.text} />
+      <CitySelector onCityChange={fetchWeatherData} />
+      <WeatherDisplay weatherData={weatherData} />
     </div>
   );
-}
+};
 
 export default App;
