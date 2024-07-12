@@ -19,7 +19,7 @@ const Rainy = () => {
   const createRain = () => {
     const newDrops = Array.from({ length: nbDrop }, (_, i) => ({
       id: i + 1,
-      left: randRange(0, 1600),
+      left: randRange(0, 1900),
       top: randRange(-1000, 1400),
     }));
     setDrops(newDrops);

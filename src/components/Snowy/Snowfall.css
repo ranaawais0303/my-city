@@ -1,0 +1,53 @@
+
+  
+  /* .snowfall-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  } */
+  
+  .snowflake {
+    --size: 1vw;
+    width: var(--size);
+    height: var(--size);
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: -5vh;
+  }
+  
+  @keyframes snowfall {
+    0% {
+      transform: translate3d(var(--left-ini), 0, 0);
+    }
+    100% {
+      transform: translate3d(var(--left-end), 110vh, 0);
+    }
+  }
+  
+  .snowflake:nth-child(1) {
+    --size: calc(1 * 0.2vw);
+    --left-ini: calc(1 * 1vw - 10vw);
+    --left-end: calc(1 * 1vw - 10vw);
+    left: calc(1 * 2vw);
+    animation: snowfall calc(5s + 1s) linear infinite;
+    animation-delay: calc(-1s);
+  }
+  
+  .snowflake:nth-child(2) {
+    --size: calc(2 * 0.2vw);
+    --left-ini: calc(2 * 1vw - 10vw);
+    --left-end: calc(2 * 1vw - 10vw);
+    left: calc(2 * 2vw);
+    animation: snowfall calc(5s + 2s) linear infinite;
+    animation-delay: calc(-2s);
+  }
+  
+  /* Add similar rules for other 48 snowflakes here */
+  
+  .snowflake:nth-child(6n) {
+    filter: blur(1px);
+  }
+  
+
+  
