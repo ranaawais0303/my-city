@@ -30,7 +30,6 @@ const Landscape = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/54046/rainy_landscape.jpeg);
   background-size: cover;
   background-position: center;
   filter: blur(1rem);

@@ -3,6 +3,7 @@ import React from "react";
 const SunWithRays = () => {
   const sunStyles = {
     position: "absolute",
+    marginBottom: "40%",
     top: 0,
     left: 0,
     right: 0,

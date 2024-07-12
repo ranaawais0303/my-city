@@ -10,6 +10,8 @@ import Drizzling from "./Drizzle/Drizzling";
 import Snowfall from "./Snowy/Snowfall";
 import StormCloud from "./Thunder/StormCloud";
 import Thunderstorm from "./Thunder/ThunderStorm";
+import CloudReal from "./Cloud/CloudReal";
+import BlinkingLight from "./Thunder/BlinkingLight";
 
 const WeatherBackground = ({ weather }) => {
   let className = "clear";

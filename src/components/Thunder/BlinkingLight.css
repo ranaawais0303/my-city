@@ -1,0 +1,44 @@
+/* Flashlight.css */
+.flashlight-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Ensure the flashlight covers the whole screen */
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:   url('../../../public/images/clear.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .flashlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0); /* Start with fully transparent */
+    animation: flashlight-animation 3s infinite alternate;
+  }
+  
+  @keyframes flashlight-animation {
+    0%, 100% {
+      background-color: rgba(255, 255, 255, 0); /* Fully transparent white */
+    }
+    50% {
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    }
+  }
+
+
+
+
+ 

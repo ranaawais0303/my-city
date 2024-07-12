@@ -11,20 +11,6 @@ const flash = keyframes`
   100% { opacity: 0; }
 `;
 
-const Background = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("https://images.unsplash.com/photo-1431352832634-845fad190fbd?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=ec80c41e488dc2b99ed543df2f3f0919");
-  background-position: center center;
-  background-origin: content-box;
-  background-size: cover;
-  background-attachment: fixed;
-  z-index: -2;
-`;
-
 const Lightning = styled.div`
   position: fixed;
   top: 0;
@@ -79,7 +65,6 @@ const Logo = styled.div`
 const Thunderstorm = () => {
   return (
     <>
-      <Background />
       <Lightning1 />
       <Lightning2 />
       <Lightning3 />
