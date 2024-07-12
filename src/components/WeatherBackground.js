@@ -4,7 +4,7 @@ import "../styles.css";
 import "react-rain-animation/lib/style.css";
 import Rainy from "./Rainy/Rainy";
 import SunWithRays from "./Sunny/SunWithRays";
-import Cloud from "./Cloud/Cloudy";
+import Cloud from "./Cloud/Cloud";
 
 const WeatherBackground = ({ weather }) => {
   let className = "clear";
@@ -36,7 +36,7 @@ const WeatherBackground = ({ weather }) => {
   }
 
   return (
-    <div className="cloudy">
+    <div className={`weather-background cloudy`}>
       <Cloud />
     </div>
   );
