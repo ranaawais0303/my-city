@@ -9,22 +9,6 @@
     background-size: cover;
   }
   
-  /* .sunny {
-    background: url('../public/images/sunny.jpg') no-repeat center center fixed;
-    background-size: cover;
-  } */
-  
-  
-  /* .cloudy {
-    background: url('../public/images/cloudy.jpg') no-repeat center center fixed;
-    background-size: cover;
-  } */
-
-/*   
-  .rainy {
-    background: url('../public/images/rainy.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }*/
   .rainy::before {
     content: '';
     position: absolute;
@@ -40,27 +24,6 @@
     100% { background-position: 0 100%; }
   } 
 
-  .cloudy::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-  } 
-  
-  @keyframes cloudy {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 100%; }
-  } 
-
-
-  
-  .stormy {
-    background: url('../public/images/stormy.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }
 
 
 /* Add more weather conditions */
@@ -68,31 +31,7 @@
     background: url('../public/images/partly-cloudy.jpg') no-repeat center center fixed;
     background-size: cover;
   } */
-  
-  .fog {
-    background: url('../public/images/fog.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }
-  
-  .mist {
-    background: url('../public/images/mist.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }
-  
-  .clear {
-    background: url('../public/images/clear.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }
-  
-  .hazy {
-    background: url('../public/images/fog.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }
-  
-  /* .thunderstorm {
-    background: url('../public/images/thunderstorm.jpg') no-repeat center center fixed;
-    background-size: cover;
-  } */
+
   .thunderyoutbreaks {
     background: url('../public/images/Thundery-outbreaks.jpg') no-repeat center center fixed;
     background-size: cover;
