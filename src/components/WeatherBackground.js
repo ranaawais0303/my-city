@@ -6,12 +6,12 @@ import Rainy from "./Rainy/Rainy";
 import SunWithRays from "./Sunny/SunWithRays";
 import Cloud from "./Cloud/Cloud";
 import FogAnimation from "./Fog/FogAnimation";
-import Drizzling from "./Drizzle/Drizzling";
 import Snowfall from "./Snowy/Snowfall";
 import StormCloud from "./Thunder/StormCloud";
-import Thunderstorm from "./Thunder/ThunderStorm";
 import CloudReal from "./Cloud/CloudReal";
 import BlinkingLight from "./Thunder/BlinkingLight";
+import Drizzle from "./Drizzle/Drizzle";
+import Cloudy from "./Cloud/Cloudy";
 
 const WeatherBackground = ({ weather }) => {
   let className = "clear";
@@ -23,7 +23,7 @@ const WeatherBackground = ({ weather }) => {
       weatherComponent = <SunWithRays />;
     } else if (weather.includes("Partly cloudy")) {
       className = "partly-cloudy";
-      weatherComponent = <Cloud />;
+      weatherComponent = <CloudReal />;
     } else if (weather.includes("Cloudy")) {
       className = "cloudy";
       weatherComponent = <Cloud />;
@@ -46,7 +46,7 @@ const WeatherBackground = ({ weather }) => {
       weatherComponent = <FogAnimation />;
     } else if (weather.includes("Drizzle") || weather.includes("drizzle")) {
       className = "drizzle";
-      weatherComponent = <Drizzling />;
+      weatherComponent = <Drizzle />;
     } else if (weather.includes("Snow")) {
       className = "snowy";
       weatherComponent = <Snowfall />;
@@ -55,13 +55,13 @@ const WeatherBackground = ({ weather }) => {
       weatherComponent = <Snowfall />;
     } else if (weather.includes("Storm")) {
       className = "stormy";
+      weatherComponent = <BlinkingLight />;
+    } else if (
+      weather.includes("Thunderstorm") ||
+      weather.includes("Thundery")
+    ) {
+      className = "rainy";
       weatherComponent = <StormCloud />;
-    } else if (weather.includes("Thunderstorm")) {
-      className = "thunderstorm";
-      weatherComponent = <Thunderstorm />;
-    } else if (weather.includes("Thundery")) {
-      className = "thunderyoutbreaks";
-      weatherComponent = <Thunderstorm />;
     } else {
       className = "clear";
     }

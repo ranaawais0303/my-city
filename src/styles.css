@@ -54,30 +54,8 @@
     0% { background-position: 0 0; }
     100% { background-position: 0 100%; }
   } 
-  
-  .snowy {
-    background: url('../public/images/snowy.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }
 
 
-.snowy::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 200%;
-    height: 100%;
-    /* background-image: url('/images/snowflake.png'); */
-    background-repeat: repeat;
-    animation: snow 10s linear infinite;
-    opacity: 0.8;
-  }
-  
-  @keyframes snow {
-    0% { background-position: 0 -100%; }
-    100% { background-position: 0 100%; }
-  }
   
   .stormy {
     background: url('../public/images/stormy.jpg') no-repeat center center fixed;

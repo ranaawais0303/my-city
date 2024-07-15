@@ -1,39 +1,60 @@
 import React from "react";
-import styled from "styled-components";
-import Cloudy from "./Cloudy";
+import styled, { keyframes } from "styled-components";
 
-// Define keyframes for animation
-
-// Styled components for the cloud and its elements
-// const CloudPane = styled.div`
-//   width: 100%;
-//   height: 400px;
-//   background: linear-gradient(#4a4a4a, #738185, #b3dae6, white);
-//   z-index: -4;
-// `;
-
-const Star = styled.div`
-  height: 3px;
-  width: 3px;
-  background: white;
-  position: absolute;
-  top: ${({ top }) => top}px;
-  left: ${({ left }) => left}px;
+// Define keyframes for smoke animation
+const smokeAnimation = keyframes`
+  25% {
+    transform: translate3d(100px, 0, 0) rotate(0.01deg);
+  }
+  50% {
+    transform: translate3d(75px, -25px, 0) rotate(0.01deg);
+  }
+  75% {
+    transform: translate3d(45px, 30px, 0) rotate(0.01deg);
+  }
+  100% {
+    transform: translate3d(25px, -15px, 0) rotate(0.01deg);
+  }
 `;
 
-const Cloud = () => {
-  return (
-    <>
-      <Cloudy id="cloud1" top={50} duration={25} delay={10} />
-      <Cloudy id="cloud2" top={100} duration={50} delay={10} />
-      <Cloudy id="cloud3" top={150} duration={75} delay={10} />
-      {/* Add more BigCloud components for other clouds */}
-      <Star id="star1" top={20} left="20%" />
-      <Star top={20} left="70%" /> <Star top={20} left="70%" />{" "}
-      {/* Add more stars here */}
-      {/* Repeat similar structure for other clouds and stars */}
-    </>
-  );
+const sunStyles = {
+  position: "absolute",
+  marginBottom: "40%",
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  margin: "auto",
+  width: "70px",
+  height: "70px",
+  borderRadius: "50%",
+  background: "white",
+  opacity: 0.9,
+  boxShadow: "0px 0px 40px 15px white",
 };
+
+// Smoke styled component
+const Smoke = styled.div`
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  transform: translate3d(0, 0, 0) rotate(0.01deg);
+  width: 120%;
+  height: 120%;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke-min.png")
+    center center no-repeat;
+  background-size: cover;
+  z-index: -10;
+  opacity: 0.5;
+  animation: ${smokeAnimation} 40s infinite alternate;
+`;
+
+const Cloud = () => (
+  <div>
+    <div style={sunStyles} />
+    <Smoke />
+    <Smoke />
+  </div>
+);
 
 export default Cloud;
