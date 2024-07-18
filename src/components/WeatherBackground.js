@@ -21,15 +21,19 @@ const WeatherBackground = ({ weather }) => {
     if (weather.includes("Sunny") || weather.includes("Clear")) {
       className = "sunny";
       weatherComponent = <SunWithRays />;
-    } else if (weather.includes("Partly cloudy")) {
+    } else if (
+      weather.includes("Partly cloudy") ||
+      weather.includes("Partly Cloudy")
+    ) {
       className = "partly-cloudy";
+      weatherComponent = <Cloud />;
+    } else if (
+      weather.includes("Cloudy") ||
+      weather.includes("Cloud") ||
+      weather.includes("Overcast")
+    ) {
+      className = "rainy";
       weatherComponent = <CloudReal />;
-    } else if (weather.includes("Cloudy")) {
-      className = "cloudy";
-      weatherComponent = <Cloud />;
-    } else if (weather.includes("Overcast")) {
-      className = "cloudy";
-      weatherComponent = <Cloud />;
     } else if (weather.includes("Rain") || weather.includes("rain")) {
       className = "rainy";
       weatherComponent = <Rainy />;
