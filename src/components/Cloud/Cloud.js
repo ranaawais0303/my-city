@@ -51,7 +51,7 @@ const Smoke = styled.div`
 
 const Cloud = ({ day }) => (
   <div>
-    {day && <div style={sunStyles} />}
+    <div style={day ? sunStyles : {}} />
     <Smoke />
     <Smoke />
   </div>

@@ -38,7 +38,7 @@ const SunWithRays = ({ day }) => {
 
   return (
     <>
-      {day && (
+      {day ? (
         <div style={sunStyles}>
           <div style={rayBoxStyles}>
             <div
@@ -153,6 +153,8 @@ const SunWithRays = ({ day }) => {
             ></div>
           </div>
         </div>
+      ) : (
+        ""
       )}
     </>
   );

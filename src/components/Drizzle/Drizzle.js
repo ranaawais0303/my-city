@@ -35,7 +35,7 @@ const Drizzle = ({ day }) => {
           style={{ left: drop.left, top: drop.top }}
         />
       ))}
-      {day && <Cloud />}
+      {day ? <Cloud /> : ""}
     </section>
   );
 };
