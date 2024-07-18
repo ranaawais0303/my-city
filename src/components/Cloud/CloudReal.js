@@ -18,11 +18,11 @@ const smokeAnimation = keyframes`
 `;
 
 // Smoke styled component
-const Smoke = styled.div`
+export const Smoke = styled.div`
   position: absolute;
   left: -10%;
   right: -10%;
-  transform: translate3d(0, 0, 0) rotate(0.01deg);
+  transform: translate3d(0, 0, 0) rotate(9deg);
   width: 120%;
   height: 120%;
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke-min.png")
