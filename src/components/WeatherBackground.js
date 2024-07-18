@@ -7,26 +7,41 @@ import SunWithRays from "./Sunny/SunWithRays";
 import Cloud from "./Cloud/Cloud";
 import FogAnimation from "./Fog/FogAnimation";
 import Snowfall from "./Snowy/Snowfall";
-import StormCloud from "./Thunder/StormCloud";
 import CloudReal from "./Cloud/CloudReal";
 import BlinkingLight from "./Thunder/BlinkingLight";
 import Drizzle from "./Drizzle/Drizzle";
-import Cloudy from "./Cloud/Cloudy";
 
-const WeatherBackground = ({ weather }) => {
+const WeatherBackground = ({ weather, day }) => {
+  console.log(weather, "weather");
   let className = "clear";
   let weatherComponent = null;
 
   if (weather) {
-    if (weather.includes("Sunny") || weather.includes("Clear")) {
+    if (weather === "Sunny" || weather === "Clear") {
       className = "sunny";
-      weatherComponent = <SunWithRays />;
+      weatherComponent = <SunWithRays day={day} />;
     } else if (
       weather.includes("Partly cloudy") ||
       weather.includes("Partly Cloudy")
     ) {
       className = "partly-cloudy";
-      weatherComponent = <Cloud />;
+      weatherComponent = <Cloud day={day} />;
+    } else if (weather.includes(" heavy rain with thunder")) {
+      className = "rainy";
+      weatherComponent = (
+        <>
+          <BlinkingLight />
+          <Rainy />
+        </>
+      );
+    } else if (weather.includes(" light rain in area with thunder")) {
+      className = "rainy";
+      weatherComponent = (
+        <>
+          <BlinkingLight />
+          <Drizzle />
+        </>
+      );
     } else if (
       weather.includes("Cloudy") ||
       weather.includes("Cloud") ||
@@ -34,6 +49,12 @@ const WeatherBackground = ({ weather }) => {
     ) {
       className = "rainy";
       weatherComponent = <CloudReal />;
+    } else if (weather.includes("Drizzle") || weather.includes("drizzle")) {
+      className = "rainy";
+      weatherComponent = <Drizzle />;
+    } else if (weather.includes("rain nearby")) {
+      className = "rainy";
+      weatherComponent = <Drizzle day={day} />;
     } else if (weather.includes("Rain") || weather.includes("rain")) {
       className = "rainy";
       weatherComponent = <Rainy />;
@@ -44,21 +65,16 @@ const WeatherBackground = ({ weather }) => {
     ) {
       className = "rainy";
       weatherComponent = <FogAnimation />;
-    } else if (weather.includes("Drizzle") || weather.includes("drizzle")) {
-      className = "rainy";
-      weatherComponent = <Drizzle />;
     } else if (weather.includes("Snow") || weather.includes("Blizzard")) {
       className = "rainy";
       weatherComponent = <Snowfall />;
-    } else if (weather.includes("Storm")) {
-      className = "rainy";
-      weatherComponent = <BlinkingLight />;
     } else if (
+      weather.includes("Storm") ||
       weather.includes("Thunderstorm") ||
       weather.includes("Thundery")
     ) {
       className = "rainy";
-      weatherComponent = <StormCloud />;
+      weatherComponent = <BlinkingLight />;
     } else {
       className = "clear";
     }

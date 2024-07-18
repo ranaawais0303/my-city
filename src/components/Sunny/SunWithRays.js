@@ -1,6 +1,6 @@
 import React from "react";
 
-const SunWithRays = () => {
+const SunWithRays = ({ day }) => {
   const sunStyles = {
     position: "absolute",
     marginBottom: "40%",
@@ -37,120 +37,124 @@ const SunWithRays = () => {
   };
 
   return (
-    <div style={sunStyles}>
-      <div style={rayBoxStyles}>
-        <div
-          className="ray ray1"
-          style={{
-            ...rayStyles,
-            height: "170px",
-            width: "30px",
-            transform: "rotate(180deg)",
-            top: "-175px",
-            left: "15px",
-          }}
-        ></div>
-        <div
-          className="ray ray2"
-          style={{
-            ...rayStyles,
-            height: "100px",
-            width: "8px",
-            transform: "rotate(220deg)",
-            top: "-90px",
-            left: "75px",
-          }}
-        ></div>
-        <div
-          className="ray ray3"
-          style={{
-            ...rayStyles,
-            height: "170px",
-            width: "50px",
-            transform: "rotate(250deg)",
-            top: "-80px",
-            left: "100px",
-          }}
-        ></div>
-        <div
-          className="ray ray4"
-          style={{
-            ...rayStyles,
-            height: "120px",
-            width: "14px",
-            transform: "rotate(305deg)",
-            top: "30px",
-            left: "100px",
-          }}
-        ></div>
-        <div
-          className="ray ray5"
-          style={{
-            ...rayStyles,
-            height: "140px",
-            width: "30px",
-            transform: "rotate(-15deg)",
-            top: "60px",
-            left: "40px",
-          }}
-        ></div>
-        <div
-          className="ray ray6"
-          style={{
-            ...rayStyles,
-            height: "90px",
-            width: "50px",
-            transform: "rotate(30deg)",
-            top: "60px",
-            left: "-40px",
-          }}
-        ></div>
-        <div
-          className="ray ray7"
-          style={{
-            ...rayStyles,
-            height: "180px",
-            width: "10px",
-            transform: "rotate(70deg)",
-            top: "-35px",
-            left: "-40px",
-          }}
-        ></div>
-        <div
-          className="ray ray8"
-          style={{
-            ...rayStyles,
-            height: "120px",
-            width: "30px",
-            transform: "rotate(100deg)",
-            top: "-45px",
-            left: "-90px",
-          }}
-        ></div>
-        <div
-          className="ray ray9"
-          style={{
-            ...rayStyles,
-            height: "80px",
-            width: "10px",
-            transform: "rotate(120deg)",
-            top: "-65px",
-            left: "-60px",
-          }}
-        ></div>
-        <div
-          className="ray ray10"
-          style={{
-            ...rayStyles,
-            height: "190px",
-            width: "23px",
-            transform: "rotate(150deg)",
-            top: "-185px",
-            left: "-60px",
-          }}
-        ></div>
-      </div>
-    </div>
+    <>
+      {day && (
+        <div style={sunStyles}>
+          <div style={rayBoxStyles}>
+            <div
+              className="ray ray1"
+              style={{
+                ...rayStyles,
+                height: "170px",
+                width: "30px",
+                transform: "rotate(180deg)",
+                top: "-175px",
+                left: "15px",
+              }}
+            ></div>
+            <div
+              className="ray ray2"
+              style={{
+                ...rayStyles,
+                height: "100px",
+                width: "8px",
+                transform: "rotate(220deg)",
+                top: "-90px",
+                left: "75px",
+              }}
+            ></div>
+            <div
+              className="ray ray3"
+              style={{
+                ...rayStyles,
+                height: "170px",
+                width: "50px",
+                transform: "rotate(250deg)",
+                top: "-80px",
+                left: "100px",
+              }}
+            ></div>
+            <div
+              className="ray ray4"
+              style={{
+                ...rayStyles,
+                height: "120px",
+                width: "14px",
+                transform: "rotate(305deg)",
+                top: "30px",
+                left: "100px",
+              }}
+            ></div>
+            <div
+              className="ray ray5"
+              style={{
+                ...rayStyles,
+                height: "140px",
+                width: "30px",
+                transform: "rotate(-15deg)",
+                top: "60px",
+                left: "40px",
+              }}
+            ></div>
+            <div
+              className="ray ray6"
+              style={{
+                ...rayStyles,
+                height: "90px",
+                width: "50px",
+                transform: "rotate(30deg)",
+                top: "60px",
+                left: "-40px",
+              }}
+            ></div>
+            <div
+              className="ray ray7"
+              style={{
+                ...rayStyles,
+                height: "180px",
+                width: "10px",
+                transform: "rotate(70deg)",
+                top: "-35px",
+                left: "-40px",
+              }}
+            ></div>
+            <div
+              className="ray ray8"
+              style={{
+                ...rayStyles,
+                height: "120px",
+                width: "30px",
+                transform: "rotate(100deg)",
+                top: "-45px",
+                left: "-90px",
+              }}
+            ></div>
+            <div
+              className="ray ray9"
+              style={{
+                ...rayStyles,
+                height: "80px",
+                width: "10px",
+                transform: "rotate(120deg)",
+                top: "-65px",
+                left: "-60px",
+              }}
+            ></div>
+            <div
+              className="ray ray10"
+              style={{
+                ...rayStyles,
+                height: "190px",
+                width: "23px",
+                transform: "rotate(150deg)",
+                top: "-185px",
+                left: "-60px",
+              }}
+            ></div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

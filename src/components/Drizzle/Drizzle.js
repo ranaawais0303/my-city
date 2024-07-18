@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Drizzle.css"; // Import your CSS file
+import Cloud from "../Cloud/Cloud";
 
 const nbDrop = 300; // Number of drops for drizzle
 
-const Drizzle = () => {
+const Drizzle = ({ day }) => {
   const [drops, setDrops] = useState([]);
 
   useEffect(() => {
@@ -34,6 +35,7 @@ const Drizzle = () => {
           style={{ left: drop.left, top: drop.top }}
         />
       ))}
+      {day && <Cloud />}
     </section>
   );
 };

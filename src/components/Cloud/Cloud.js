@@ -49,9 +49,9 @@ const Smoke = styled.div`
   animation: ${smokeAnimation} 40s infinite alternate;
 `;
 
-const Cloud = () => (
+const Cloud = ({ day }) => (
   <div>
-    <div style={sunStyles} />
+    {day && <div style={sunStyles} />}
     <Smoke />
     <Smoke />
   </div>

@@ -20,7 +20,10 @@ const App = () => {
 
   return (
     <div>
-      <WeatherBackground weather={weatherData?.current.condition.text} />
+      <WeatherBackground
+        weather={weatherData?.current.condition.text}
+        day={weatherData?.current.is_day}
+      />
       <CitySelector onCityChange={fetchWeatherData} />
       <WeatherDisplay weatherData={weatherData} />
     </div>
