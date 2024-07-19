@@ -29,7 +29,7 @@ const sunStyles = {
   height: "70px",
   borderRadius: "50%",
   background: "white",
-  opacity: 0.9,
+  opacity: 0.4,
   boxShadow: "0px 0px 40px 15px white",
 };
 

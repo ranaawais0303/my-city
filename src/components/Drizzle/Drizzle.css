@@ -5,9 +5,9 @@ Drizzle.css
     left: 0;
     width: 100%;
     height: 100vh;
-    pointer-events: none; /* Allow clicks through the drizzle effect */
+    pointer-events: none; 
     overflow: hidden;
-    z-index: 10; /* Adjust as needed */
+    z-index: 10; 
   }
   
   .drops {

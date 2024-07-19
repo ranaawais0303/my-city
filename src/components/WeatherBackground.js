@@ -49,7 +49,11 @@ const WeatherBackground = ({ weather, day }) => {
     ) {
       className = "rainy";
       weatherComponent = <CloudReal />;
-    } else if (weather.includes("Drizzle") || weather.includes("drizzle")) {
+    } else if (
+      weather.includes("Drizzle") ||
+      weather.includes("drizzle") ||
+      weather.includes("Light rain")
+    ) {
       className = "rainy";
       weatherComponent = <Drizzle />;
     } else if (weather.includes("rain nearby")) {
@@ -68,6 +72,14 @@ const WeatherBackground = ({ weather, day }) => {
     } else if (weather.includes("Snow") || weather.includes("Blizzard")) {
       className = "rainy";
       weatherComponent = <Snowfall />;
+    } else if (weather.includes("Thundery outbreaks in nearby")) {
+      className = "rainy";
+      weatherComponent = (
+        <>
+          <BlinkingLight />
+          <Cloud day={day} />
+        </>
+      );
     } else if (
       weather.includes("Storm") ||
       weather.includes("Thunderstorm") ||
