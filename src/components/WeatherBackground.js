@@ -49,14 +49,13 @@ const WeatherBackground = ({ weather, day }) => {
     ) {
       className = "rainy";
       weatherComponent = <CloudReal />;
-    } else if (
-      weather.includes("Drizzle") ||
-      weather.includes("drizzle") ||
-      weather.includes("Light rain")
-    ) {
+    } else if (weather.includes("Drizzle") || weather.includes("drizzle")) {
       className = "rainy";
       weatherComponent = <Drizzle />;
-    } else if (weather.includes("rain nearby")) {
+    } else if (
+      weather.includes("rain nearby") ||
+      weather.includes("Light rain shower")
+    ) {
       className = "rainy";
       weatherComponent = <Drizzle day={day} />;
     } else if (weather.includes("Rain") || weather.includes("rain")) {

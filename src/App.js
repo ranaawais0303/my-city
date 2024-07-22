@@ -9,8 +9,9 @@ const App = () => {
 
   const fetchWeatherData = async (city) => {
     try {
+      // &dt=${daysOffset}`
       const response = await axios.get(
-        `https://api.weatherapi.com/v1/forecast.json?key=e2c17cf7def74706bbd62406241107&q=${city}&aqi=no`
+        `https://api.weatherapi.com/v1/forecast.json?key=e2c17cf7def74706bbd62406241107&q=${city}&aqi=no&lang=en&alerts=yes&days=10`
       );
       setWeatherData(response.data);
     } catch (error) {

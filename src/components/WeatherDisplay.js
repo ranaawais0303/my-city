@@ -13,6 +13,7 @@ const WeatherDisplay = ({ weatherData }) => {
         alt={weatherData.current.condition.text}
       />
       <p>{weatherData.current.temp_c}°C</p>
+
       <div className="weather-container">
         {weatherData.forecast.forecastday[0].hour.map((hourData, index) => (
           <div key={index} className="hourly-weather">
@@ -20,6 +21,24 @@ const WeatherDisplay = ({ weatherData }) => {
             <img src={hourData.condition.icon} alt={hourData.condition.text} />
             <p>{hourData.condition.text}</p>
             <p>{hourData.temp_c}°C</p>
+          </div>
+        ))}
+        {weatherData.forecast.forecastday.map((dayData, index) => (
+          <div key={index} className="daily-weather">
+            <p>
+              {new Date(dayData.date).toLocaleDateString(undefined, {
+                weekday: "long",
+                month: "short",
+                day: "numeric",
+              })}
+            </p>
+            <img
+              src={dayData.day.condition.icon}
+              alt={dayData.day.condition.text}
+            />
+            <p>{dayData.day.condition.text}</p>
+            <p>Max: {dayData.day.maxtemp_c}°C</p>
+            <p>Min: {dayData.day.mintemp_c}°C</p>
           </div>
         ))}
       </div>
